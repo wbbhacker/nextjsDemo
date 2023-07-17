@@ -1,0 +1,42 @@
+.doc{
+  display: flex;
+  width: 90%;
+  min-width: 1100px;
+  max-width: 1366px;
+  margin-top:16px;
+  background: #fff;
+  overflow: hidden;
+  justify-content: center;
+}
+.content{
+  box-sizing: border-box;
+  border: 1px solid #f00;
+  width:1100px;
+  height:100%;
+  padding:0 4px;
+}
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:28px;
+  margin-bottom:26px;
+  span{
+    font-family: PingFangSC-Medium;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0em;
+    color: #808080;
+  }
+}
+.input-placeholder{
+  position: absolute;
+  top:10px;
+  left:504px;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #959EAC;
+}
