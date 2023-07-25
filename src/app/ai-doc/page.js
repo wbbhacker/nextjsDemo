@@ -1,4 +1,3 @@
-'use client'
 import { Button, DatePicker } from 'antd';
 import NavTop from '@/components/NavTop';
 import Doc from './components/doc'
