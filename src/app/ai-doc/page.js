@@ -4,14 +4,14 @@ import Doc from './components/doc'
 
 const divStyle = {
   display: 'flex',
-  'flex-direction': 'column',
+  'flexDirection': 'column',
   height: '100%'
 }
 const docStyle = {
   display: 'flex',
   flex: '1',
-  'justify-content': 'center',
-  'min-width': '1100px'
+  'justifyContent': 'center',
+  'minWidth': '1100px'
 }
 const AiDoc = () => {
   return (<div style={divStyle}>

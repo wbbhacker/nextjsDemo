@@ -1,19 +1,24 @@
-// 'use client'
+
 import Image from 'next/image'
-// import { Button, DatePicker } from 'antd';
-// import withTheme from '../theme'
+import Link from 'next/link'
 
 const Home = function () {
   return (
     <div className="main">
-      {/* <DatePicker picker="week" /> */}
-      <div>Home</div>
+      <div>
+        <Link href={'ai-doc'}>ai-doc</Link>
+      </div>
+      <div>
+        <Link href={'about'}>about</Link>
+      </div>
+      <div>
+        <Link href={'blog'}>blog</Link>
+      </div>
     </div>
   )
 }
 
 const HomePage = () => {
-  // return withTheme(<Home />);
   return <Home></Home>
 }
 
