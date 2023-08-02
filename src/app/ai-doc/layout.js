@@ -7,6 +7,7 @@ export default function AiLayout({
   return (
     <section>
       <Suspense fallback={<Loading></Loading>}>
+        <div>layout</div>
         {children}
       </Suspense>
     </section>
