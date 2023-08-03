@@ -17,6 +17,9 @@ const Home = function () {
       <div>
         <Link href={'dashboard'}>dashboard</Link>
       </div>
+      <div>
+        <Link href={'/login'}>login</Link>
+      </div>
     </div>
   )
 }
