@@ -11,6 +11,7 @@
   "dependencies": {
     "antd": "^5.7.0",
     "autoprefixer": "10.4.14",
+    "buffer": "^6.0.3",
     "next": "13.4.10",
     "postcss": "8.4.26",
     "react": "18.2.0",
@@ -18,6 +19,7 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
+    "plotly.js": "^2.25.1",
     "sass": "^1.63.6"
   }
 }
