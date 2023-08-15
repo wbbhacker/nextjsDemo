@@ -1,38 +1,48 @@
 
 'use client'
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
-
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react";
+import { useEffect, useState } from 'react'
 const Doublecolorball = () => {
-    return ( <Table aria-label="Example static collection table">
-    <TableHeader>
-      <TableColumn>NAME</TableColumn>
-      <TableColumn>ROLE</TableColumn>
-      <TableColumn>STATUS</TableColumn>
-    </TableHeader>
-    <TableBody>
-      <TableRow key="1">
-        <TableCell>Tony Reichert</TableCell>
-        <TableCell>CEO</TableCell>
-        <TableCell>Active</TableCell>
-      </TableRow>
-      <TableRow key="2">
-        <TableCell>Zoey Lang</TableCell>
-        <TableCell>Technical Lead</TableCell>
-        <TableCell>Paused</TableCell>
-      </TableRow>
-      <TableRow key="3">
-        <TableCell>Jane Fisher</TableCell>
-        <TableCell>Senior Developer</TableCell>
-        <TableCell>Active</TableCell>
-      </TableRow>
-      <TableRow key="4">
-        <TableCell>William Howard</TableCell>
-        <TableCell>Community Manager</TableCell>
-        <TableCell>Vacation</TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>)
+
+  const [data, setData] = useState([])
+
+  const fetchData = async () => {
+    const res = await fetch('doublecolorball/api/getAll')
+    const json = await res.json()
+    if (json.code === 0) {
+      setData(json.data)
+    }
   }
-  
-  
-  export default Doublecolorball
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  return (<div className="container overflow-y-auto mx-auto	mt-4">
+    <Table aria-label="Example static collection table">
+      <TableHeader>
+        <TableColumn width="100">期号</TableColumn>
+        <TableColumn>开间时间</TableColumn>
+        <TableColumn>红球</TableColumn>
+        <TableColumn>蓝色球</TableColumn>
+      </TableHeader>
+      <TableBody>
+        {
+          data.map((item, idx) => {
+            return <TableRow key={idx}>
+              <TableCell>{item.code}</TableCell>
+              <TableCell>{item.date}</TableCell>
+              <TableCell>{item.red}</TableCell>
+              <TableCell>{item.blue}</TableCell>
+            </TableRow>
+          })
+        }
+
+      </TableBody>
+    </Table>
+  </div>)
+
+}
+
+
+export default Doublecolorball

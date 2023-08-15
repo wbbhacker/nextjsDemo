@@ -1,7 +1,7 @@
 'use client'
 import './globals.css'
 
-import {Providers} from "./providers";
+import { Providers } from "./providers";
 import Nav from '@/components/Nav'
 
 export default function RootLayout(props) {
@@ -9,10 +9,13 @@ export default function RootLayout(props) {
   const { children, auth } = props
   return (
     <html lang="en">
-      <body >
-        <Providers>
+      <body className='overflow-auto	'>
+        <Providers className="flex">
           <Nav />
-          {children}
+          <div style={{ height: 'calc(100vh - 64px)', overflow: 'auto' }}>
+            {children}
+          </div>
+
           {/* {auth} */}
         </Providers>
       </body>
