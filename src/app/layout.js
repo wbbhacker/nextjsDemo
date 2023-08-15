@@ -1,19 +1,19 @@
 'use client'
 import './globals.css'
-import Link from 'next/link'
 
 import {Providers} from "./providers";
+import Nav from '@/components/Nav'
 
 export default function RootLayout(props) {
-  console.log(Object.keys(props))
+  // console.log(Object.keys(props))
   const { children, auth } = props
   return (
     <html lang="en">
       <body >
         <Providers>
-          <div><Link href={'/'}>Go To Home</Link></div>
+          <Nav />
           {children}
-          {auth}
+          {/* {auth} */}
         </Providers>
       </body>
 

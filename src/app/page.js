@@ -1,11 +1,13 @@
-
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import {Link as LinkStyle} from 'next/link'
 
-const Home = function () {
+
+const HomePage = function () {
   return (
     <div className="main">
-      <div>
+      {/* <div>
         <Link href={'ai-doc'}>ai-doc</Link>
       </div>
       <div>
@@ -19,16 +21,13 @@ const Home = function () {
       </div>
       <div>
         <Link href={'/login'}>login</Link>
-      </div>
-      <div>
-        <Link href={'/doublecolorball'}>DoubleColorBall</Link>
-      </div>
+      </div> */}
+      {/* <div>
+          <Link href={'/doublecolorball'}>DoubleColorBall</Link>
+      </div> */}
     </div>
   )
 }
 
-const HomePage = () => {
-  return <Home></Home>
-}
 
 export default HomePage

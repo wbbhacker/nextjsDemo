@@ -1,5 +1,5 @@
 import { Button, DatePicker } from 'antd';
-import NavTop from '@/components/NavTop';
+import NavTop from '@/app/ai-doc/components/NavTop';
 import Doc from './components/doc'
 
 const divStyle = {

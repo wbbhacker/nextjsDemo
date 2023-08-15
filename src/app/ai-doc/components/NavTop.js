@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '../../public/thor-logo.svg'
+import logo from '../../../../public/thor-logo.svg'
 import style from './NavTop.module.scss'
 const NavTop = () => {
   return (<div className={style['nav-top']}>
