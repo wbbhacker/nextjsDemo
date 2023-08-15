@@ -20,6 +20,9 @@ const Home = function () {
       <div>
         <Link href={'/login'}>login</Link>
       </div>
+      <div>
+        <Link href={'/doublecolorball'}>DoubleColorBall</Link>
+      </div>
     </div>
   )
 }
