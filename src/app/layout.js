@@ -15,7 +15,6 @@ export default function RootLayout(props) {
           <div style={{ height: 'calc(100vh - 64px)', overflow: 'auto' }}>
             {children}
           </div>
-
           {/* {auth} */}
         </Providers>
       </body>
