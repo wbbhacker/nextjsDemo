@@ -13,7 +13,6 @@ const Doublecolorball = () => {
       setData(json.data)
     }
   }
-
   useEffect(() => {
     fetchData()
   }, [])

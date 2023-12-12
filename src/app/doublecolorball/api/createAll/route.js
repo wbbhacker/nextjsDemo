@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server'
-import {PrismaClient} from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
 
-async function fetchData(pageNo){
-  const res = await fetch(`http://www.cwl.gov.cn/cwl_admin/front/cwlkj/search/kjxx/findDrawNotice?name=ssq&pageNo=${pageNo}&pageSize=30&systemType=PC`,{
-    headers:{
+async function fetchData(pageNo) {
+  const res = await fetch(`http://www.cwl.gov.cn/cwl_admin/front/cwlkj/search/kjxx/findDrawNotice?name=ssq&pageNo=${pageNo}&pageSize=30&systemType=PC`, {
+    headers: {
       Accept: 'application/json, text/javascript, */*; q=0.01',
       'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
       'x-requested-with': 'XMLHttpRequest',
@@ -23,29 +23,29 @@ async function fetchData(pageNo){
 }
 export async function GET() {
 
-    const res = await fetchData(1)
-    
-    let dataArr = []
-    for(let i=1; i<=54; i++){
-      const res = await fetchData(i)
-      dataArr = dataArr.concat(res.result)
+  const res = await fetchData(1)
+
+  let dataArr = []
+  for (let i = 1; i <= 54; i++) {
+    const res = await fetchData(i)
+    dataArr = dataArr.concat(res.result)
+  }
+  console.log(dataArr[0])
+  console.log(`一共${dataArr.length}条数据`)
+  dataArr = dataArr.map((item) => {
+    return {
+      code: item.code,
+      date: new Date(item.date.replace(/\(\S\)/, '')),
+      red: item.red,
+      blue: item.blue
     }
+  })
+  const result = await prisma.DoubleColorBall.createMany({
+    data: dataArr
+  })
 
-    console.log(`一共${dataArr.length}条数据`)
-    dataArr = dataArr.map((item)=>{
-      return {
-        code:item.code,
-        date:new Date(item.date.replace(/\(\S\)/,'')),
-        red:item.red,
-        blue:item.blue
-      }
-    })
-    // const result = await prisma.DoubleColorBall.createMany({
-    //   data:dataArr
-    // })
+  return NextResponse.json(result)
 
-  // return NextResponse.json(result) 
-
-  return NextResponse.json({resulte:'未写入数据库'}) 
+  return NextResponse.json({ resulte: '未写入数据库' })
 
 }
