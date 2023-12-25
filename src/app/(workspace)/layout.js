@@ -8,13 +8,12 @@ export default function RootLayout(props) {
   console.log(props);
   return (
     <html lang="en">
-      <body className="overflow-auto bg-background">
+      <body className="overflow-auto bg-background ">
         <Providers className="flex">
           <Nav />
           <div style={{ height: 'calc(100vh - 64px)', overflow: 'auto' }}>
             {children}
           </div>
-          {/* {auth} */}
         </Providers>
       </body>
     </html>
