@@ -1,8 +1,6 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import {Link as LinkStyle} from 'next/link'
-
+import Image from 'next/image';
+import Link from 'next/link';
+import { Link as LinkStyle } from 'next/link';
 
 const HomePage = function () {
   return (
@@ -25,9 +23,9 @@ const HomePage = function () {
       {/* <div>
           <Link href={'/doublecolorball'}>DoubleColorBall</Link>
       </div> */}
+      workspace index page
     </div>
-  )
-}
+  );
+};
 
-
-export default HomePage
+export default HomePage;
