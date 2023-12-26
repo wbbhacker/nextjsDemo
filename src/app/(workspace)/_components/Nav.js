@@ -1,4 +1,3 @@
-'use client';
 import Link from 'next/link';
 import {
   Navbar,
@@ -19,7 +18,9 @@ const Nav = () => {
           <Link href={'/'}>Home</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href={'/admin'}>Admin</Link>
+          <Link href={'/admin'} target="_blank">
+            Admin
+          </Link>
         </NavbarItem>
         <NavbarItem>
           <Link href={'/doublecolorball'}>DoubleColorBall</Link>

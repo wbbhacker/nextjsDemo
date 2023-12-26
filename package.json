@@ -11,9 +11,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.18.1",
     "@nextui-org/react": "^2.2.9",
     "@prisma/client": "^5.7.1",
-    "antd": "^5.12.4",
+    "antd": "^5.12.5",
     "buffer": "^6.0.3",
     "framer-motion": "^10.16.16",
     "next": "14.0.4",
