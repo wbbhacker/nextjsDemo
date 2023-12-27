@@ -28,6 +28,7 @@ const ThemeSwitch = (props) => {
             defaultSelected
             size="lg"
             color="secondary"
+            isSelected={theme === 'sun'}
             onValueChange={onValueChange}
             thumbIcon={({ isSelected, className }) =>
                 isSelected ? (

@@ -9,9 +9,23 @@ export default {
     argTypes: {
         name: {
             control: {
-                type: 'radio',
+                type: 'select',
+            },
+            table: {
+                defaultValue: {
+                    summary: 'sun',
+                },
             },
             options: ['sun', 'moon'],
+            description: 'icon 类型',
+        },
+        color: {
+            table: {
+                defaultValue: {
+                    summary: 'currentColor',
+                },
+            },
+            description: 'icon 颜色',
         },
     },
 };
