@@ -23,10 +23,16 @@ const Nav = () => {
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
+                    <Link href={'/bookmark'}>bookmark</Link>
+                </NavbarItem>
+                <NavbarItem>
                     <Link href={'/doublecolorball'}>DoubleColorBall</Link>
                 </NavbarItem>
             </NavbarContent>
-            <ThemeSwitch></ThemeSwitch>
+            <div className="w-14 h-8">
+                <ThemeSwitch></ThemeSwitch>
+            </div>
+
             {/* <NavbarContent justify="end">
       <NavbarItem className="hidden lg:flex">
         <Link href="#">Login</Link>

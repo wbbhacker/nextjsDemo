@@ -2,21 +2,33 @@
 version: '3.1'
 
 services:
+    minio:
+        image: quay.io/minio/minio
+        volumes:
+            - ./data:/data
+        ports:
+            - 9300:9000
+            - 9400:9001
+        environment:
+            MINIO_ROOT_USER: 'wbb'
+            MINIO_ROOT_PASSWORD: '121628170'
+            MINIO_ADDRESS: ':9000'
+            MINIO_CONSOLE_ADDRESS: ':9001'
+        command: minio server /data
+    db:
+        image: mysql
+        # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+        # (this is just an example, not intended to be a production configuration)
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+        ports:
+            - 3306:3306
 
-  db:
-    image: mysql
-    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
-    # (this is just an example, not intended to be a production configuration)
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-    ports:
-      - 3306:3306
-
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
-      # docker-compose -f docker-compose.yml up
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+            # docker-compose -f docker-compose.yml up
