@@ -9,12 +9,13 @@ export async function GET() {
     });
 
     const expiry = 24 * 60 * 60; // URL有效期，单位为秒
-    // try {
-    //     const buckets = await minioClient.listBuckets();
-    //     console.log('success', buckets);
-    // } catch (e) {
-    //     console.log(e);
-    // }
+    try {
+        const buckets = await minioClient.listBuckets();
+        console.log('success', buckets);
+    } catch (e) {
+        console.log(e);
+    }
+    let reg = /ab/g;
 
     minioClient.presignedGetObject(
         'bookmark',
