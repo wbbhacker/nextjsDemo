@@ -11,6 +11,11 @@ const preview = {
             },
         },
     },
+    decorators: [
+        (Story, ctx) => {
+            return <Story></Story>;
+        },
+    ],
 };
 
 export default preview;

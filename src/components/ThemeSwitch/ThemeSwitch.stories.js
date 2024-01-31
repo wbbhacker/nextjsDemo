@@ -2,6 +2,8 @@ import ThemeSwitch from './index';
 
 import { Providers } from '@/app/(workspace)/providers';
 
+import { useGlobals } from '@storybook/addons';
+
 export default {
     title: 'components/ThemeSwitch',
     component: ThemeSwitch,
@@ -14,9 +16,20 @@ export default {
 };
 export const Switch = {
     render: function () {
+        const [{ backgrounds }, updateGlobals] = useGlobals();
+
+        const changeBackground = (newBackground) => {
+            const newBackgroundColor = {
+                value: newBackground === 'dark' ? '#333333' : '#ffffff',
+            };
+
+            updateGlobals({
+                backgrounds: newBackgroundColor,
+            });
+        };
         return (
             <Providers className="flex">
-                <ThemeSwitch></ThemeSwitch>
+                <ThemeSwitch onChange={changeBackground}></ThemeSwitch>
             </Providers>
         );
     },

@@ -11,7 +11,7 @@ import Icons from '@/components/Icons';
  */
 const ThemeSwitch = (props) => {
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useTheme('sun');
 
     useEffect(() => {
         setMounted(true);
@@ -21,6 +21,7 @@ const ThemeSwitch = (props) => {
 
     const onValueChange = (val) => {
         setTheme(val ? 'sun' : 'dark');
+        props.onChange(val ? 'sun' : 'dark');
     };
 
     return (
