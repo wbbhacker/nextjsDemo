@@ -20,7 +20,8 @@ const ListBookMark = (props) => {
                             <Icons name={'sun'} className={iconClasses} />
                         }
                     >
-                        New file
+                        New fileNew fileNew fileNew fileNew fileNew fileNew
+                        fileNew file
                     </ListboxItem>
                     <ListboxItem
                         key="copy"
